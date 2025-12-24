@@ -19,13 +19,25 @@ export default function NoteDetailsClient() {
   });
 
   if (isLoading) {
-    return <p>Loading, please wait...</p>;
+    return (
+      <h2 style={{ color: 'black', margin: '0 auto', marginTop: '70px' }}>
+        Loading, please wait...
+      </h2>
+    );
   }
   if (isError) {
-    return <p>Something went wrong.</p>;
+    return (
+      <h2 style={{ color: 'black', margin: '0 auto', marginTop: '70px' }}>
+        Something went wrong!
+      </h2>
+    );
   }
   if (!note) {
-    return <p>Something went wrong.</p>;
+    return (
+      <h2 style={{ color: 'black', margin: '0 auto', marginTop: '70px' }}>
+        Something went wrong!
+      </h2>
+    );
   }
   return (
     <>

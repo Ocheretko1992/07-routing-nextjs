@@ -16,7 +16,6 @@ const NoteDetails = ({ note }: NoteDetailsProp) => {
         <div className={css.header}>
           <h2>{note.title}</h2>
         </div>
-        <h2 className={css.content}>id: {note.id}</h2>
         <p className={css.content}>{note.content}</p>
         <p className={css.date}>{noteData}</p>
       </div>
