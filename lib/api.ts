@@ -15,6 +15,7 @@ axios.interceptors.request.use(config => {
 interface ParamsProp {
   page: number;
   search: string;
+  tag?: string;
 }
 
 export interface FetchNotesResponse {
@@ -29,12 +30,13 @@ interface createNoteProps {
   tag: string;
 }
 
-export const fetchNotes = async ({ page, search }: ParamsProp) => {
+export const fetchNotes = async ({ page, search, tag }: ParamsProp) => {
   const { data } = await axios.get<FetchNotesResponse>('/notes', {
     params: {
       page,
       perPage: 9,
       search,
+      tag,
     },
   });
   return data;

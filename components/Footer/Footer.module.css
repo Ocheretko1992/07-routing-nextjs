@@ -5,9 +5,9 @@
   font-size: 14px;
   color: #555;
   border-top: 1px solid #ddd;
-  position: absolute;
-  bottom: 0;
   width: 100vw;
+  position: fixed;
+  bottom: 0;
 }
 
 .wrap {

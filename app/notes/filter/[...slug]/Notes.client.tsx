@@ -12,20 +12,25 @@ import { useState, useEffect } from 'react';
 import { useDebouncedCallback } from 'use-debounce';
 import { toast, Toaster } from 'react-hot-toast';
 import css from './NotesPage.module.css';
-import Loading from '../loading';
+import Loading from '@/app/loading';
 
-export default function NotesClient() {
+interface NotesProp{
+  tag?:string
+}
+
+export default function NotesClient({ tag }: NotesProp) {
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState('');
   const { isOpen, openModal, closeModal } = useModalControl();
+
   const {
     data: response,
     isSuccess,
     isLoading,
     isError,
   } = useQuery({
-    queryKey: ['notes', search, page],
-    queryFn: () => fetchNotes({ search, page }),
+    queryKey: ['notes', search, page, tag],
+    queryFn: () => fetchNotes({ search, page, tag }),
     enabled: page !== 0,
     placeholderData: keepPreviousData,
     refetchOnMount: false,
