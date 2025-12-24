@@ -8,14 +8,14 @@ import Error from '@/components/Error/Error';
 import useModalControl from '@/hooks/useModalChange';
 import { fetchNotes } from '@/lib/api';
 import { useQuery, keepPreviousData } from '@tanstack/react-query';
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDebouncedCallback } from 'use-debounce';
 import { toast, Toaster } from 'react-hot-toast';
 import css from './NotesPage.module.css';
 import Loading from '@/app/loading';
 
-interface NotesProp{
-  tag?:string
+interface NotesProp {
+  tag?: string;
 }
 
 export default function NotesClient({ tag }: NotesProp) {
@@ -39,9 +39,12 @@ export default function NotesClient({ tag }: NotesProp) {
 
   useEffect(() => {
     if (response?.notes.length === 0) {
-      toast.error('No notes found for your request.');
+      toast.dismiss();
+      toast.error('No notes found for your request.', {
+        duration: 1000,
+      });
     }
-  }, [response?.notes.length]);
+  }, [response, response?.notes, isSuccess]);
 
   const hendleSearch = useDebouncedCallback((value: string) => {
     setSearch(value);
