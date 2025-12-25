@@ -13,9 +13,13 @@
 .wrap {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 5px;
 }
 
+.positionP{
+  display: flex;
+  gap: 5px;
+}
 .footer a {
   color: #226ec5;
   font-weight: 600;
