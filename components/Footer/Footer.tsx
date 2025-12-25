@@ -14,7 +14,7 @@ const Footer = () => {
               target="blank"
               rel="noopener noreferrer"
             >
-              student@notehub.app
+              www.linkedin.com/in/ocheretko-oleh
             </a>
           </p>
         </div>
