@@ -10,8 +10,8 @@ const Footer = () => {
           <p className={css.positionP}>
             Contact us:
             <a
-              href="www.linkedin.com/in/ocheretko-oleh"
-              target="blank"
+              href="https://www.linkedin.com/in/ocheretko-oleh"
+              target="_blank"
               rel="noopener noreferrer"
             >
               www.linkedin.com/in/ocheretko-oleh
