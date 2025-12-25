@@ -28,14 +28,14 @@ export default function NotePreview() {
     : `Created at: ${note?.createdAt}`;
 
   if (isLoading) {
-    return <p>Loading, please wait...</p>;
+    return <h2>Loading, please wait...</h2>;
   }
   if (isError) {
-    return <p>Something went wrong.</p>;
+    return <h2>Something went wrong.</h2>;
   }
 
   if (!note) {
-    return <p>There is no notes...</p>;
+    return <h2>There is no notes...</h2>;
   }
 
   return (
